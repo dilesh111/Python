@@ -213,7 +213,7 @@ while run:
     print(items)
     items += 1
 
-'''
+
 
 # Import libraries into scripts
 import re
@@ -234,3 +234,102 @@ string = string + "6 365-98"
 print(string)
 new = re.sub('[^0-9]', '', string)
 print(new)
+
+
+
+# Breaking out of while loop
+import random
+
+
+playerhp = 260
+enemytkl = 60
+enemytkh = 80
+
+while playerhp > 0:
+    dmg = random.randrange(enemytkl, enemytkh)
+    print("The value", dmg)
+    playerhp = playerhp - dmg
+
+    if playerhp <= 30:
+       playerhp = 30
+
+    print("Enemy strikes for", dmg, "Current HP is", playerhp)
+
+    if playerhp > 30:
+       continue
+
+    print("You have low health")
+    break
+
+
+# Classes & Objects
+
+
+class Enemy:
+       attacklaw = 60
+       attackhgh = 80
+
+       def getattack(self):
+           print(self.attacklaw)
+
+       def getattack1(self):
+           print(self.attackhgh)
+
+
+enemy1 = Enemy()
+enemy1.getattack()
+
+enemy2 = Enemy()
+enemy2.getattack1()
+
+
+# Instance Variable
+
+
+class Enemy:
+
+    def __init__(self, atkl, atkh):
+        self.atkl = atkl
+        self.atkh = atkh
+
+    def getattack(self):
+            print(self.atkl)
+
+    def getattack1(self):
+            print(self.atkh)
+
+
+enemy1 = Enemy(30, 50)
+enemy1.getattack()
+
+enemy2 = Enemy(70, 90)
+enemy2.getattack1()
+'''
+
+# Classes and Instance variable
+
+
+class Enemy:
+    hp = 200
+
+    def __init__(self, atkl, atkh):
+        self.atkl = atkl
+        self.atkh = atkh
+
+    def getattack(self):
+            print(self.atkl)
+
+    def getattack1(self):
+            print(self.atkh)
+
+    def gethp(self):
+            print(self.hp)
+
+
+enemy1 = Enemy(30, 50)
+enemy1.getattack()
+enemy1.gethp()
+
+enemy2 = Enemy(70, 90)
+enemy2.getattack1()
+enemy2.gethp()
